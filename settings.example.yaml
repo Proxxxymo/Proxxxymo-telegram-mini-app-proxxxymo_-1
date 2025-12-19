@@ -1,0 +1,31 @@
+videos_directory: "./videos"
+notes_directory: "./notes"
+upload_log: "./upload_log.json"
+allowed_extensions:
+  - ".mp4"
+  - ".mov"
+  - ".mkv"
+
+perplexity:
+  api_key_env: "PERPLEXITY_API_KEY"
+  model: "llama-3.1-sonar-large-128k-online"
+  system_prompt: >
+    Ты помогаешь оформлять вертикальные видео для YouTube Shorts.
+    Учитывай, что видео короткие, пиши по-русски и максимально кликабельно.
+
+youtube:
+  client_secrets_file: "./client_secret.json"
+  credentials_file: "./token.json"
+
+upload_defaults:
+  category_id: "22"
+  tags:
+    - shorts
+    - tiktok
+  visibility: "unlisted"
+  description_footer: "Подписывайтесь, чтобы не пропустить новые ролики!"
+
+schedule:
+  - cron: "0 12 * * *"
+    timezone: "Europe/Moscow"
+    visibility: "public"
