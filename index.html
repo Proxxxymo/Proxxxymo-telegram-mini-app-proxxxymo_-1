@@ -8,11 +8,15 @@
 </head>
 <body>
     <h1>Добро пожаловать в мое мини-приложение!</h1>
-    <button id="closeBtn">Закрыть</button>
+    <button id="closeBtn" aria-label="Закрыть мини-приложение">Закрыть</button>
 
     <script>
         Telegram.WebApp.ready();
         document.getElementById('closeBtn').addEventListener('click', function() {
+            var btn = this;
+            btn.disabled = true;
+            btn.setAttribute('aria-busy', 'true');
+            btn.innerText = 'Закрытие...';
             Telegram.WebApp.close();
         });
     </script>
