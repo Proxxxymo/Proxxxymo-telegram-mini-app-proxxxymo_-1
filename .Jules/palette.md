@@ -1,0 +1,3 @@
+## 2024-05-24 - Native tactile response for Telegram Mini Apps
+**Learning:** Standard web buttons in Telegram Mini Apps lack physical response (no default haptic feedback). Since users expect a native-like experience inside Telegram, this absence creates a slightly disconnected feeling when interacting with primary actions like closing the app. Adding visual states (disabling, updating text) alongside physical feedback greatly enhances the perceived responsiveness.
+**Action:** Always consider adding `Telegram.WebApp.HapticFeedback.impactOccurred('light')` (with appropriate fallback/checks) alongside visual feedback (loading/disabled states) for primary interactive elements like submit or close buttons within Telegram Mini Apps.

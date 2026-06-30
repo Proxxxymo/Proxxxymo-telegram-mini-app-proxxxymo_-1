@@ -12,8 +12,17 @@
 
     <script>
         Telegram.WebApp.ready();
-        document.getElementById('closeBtn').addEventListener('click', function() {
-            Telegram.WebApp.close();
+        document.getElementById('closeBtn').addEventListener('click', function(e) {
+            var btn = e.target;
+            btn.disabled = true;
+            btn.textContent = 'Закрытие...';
+            if (Telegram.WebApp.HapticFeedback) {
+                Telegram.WebApp.HapticFeedback.impactOccurred('light');
+            }
+            // Add a small delay to let the UI update and user feel the feedback before closing
+            setTimeout(function() {
+                Telegram.WebApp.close();
+            }, 150);
         });
     </script>
 </body>
