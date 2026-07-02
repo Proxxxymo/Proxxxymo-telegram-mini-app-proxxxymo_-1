@@ -1,0 +1,3 @@
+## 2026-07-02 - Preventing double-submissions in single-action buttons
+**Learning:** In environments like Telegram mini-apps, users may rapid-click critical single-action buttons like 'Close' before the native API responds, leading to unexpected behaviors or redundant API calls.
+**Action:** Always disable single-action API buttons immediately within their click event handler to ensure predictable behavior and give users immediate feedback that their action was registered.
