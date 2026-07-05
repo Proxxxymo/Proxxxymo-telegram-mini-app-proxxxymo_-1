@@ -12,7 +12,11 @@
 
     <script>
         Telegram.WebApp.ready();
-        document.getElementById('closeBtn').addEventListener('click', function() {
+        document.getElementById('closeBtn').addEventListener('click', function(e) {
+            var btn = e.target;
+            btn.disabled = true;
+            btn.setAttribute('aria-busy', 'true');
+            btn.innerText = 'Закрытие...';
             Telegram.WebApp.close();
         });
     </script>
