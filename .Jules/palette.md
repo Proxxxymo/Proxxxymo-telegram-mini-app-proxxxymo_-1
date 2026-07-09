@@ -1,0 +1,3 @@
+## 2024-06-25 - Immediate Feedback on Native APIs
+**Learning:** Native API calls like `Telegram.WebApp.close()` can sometimes have a slight delay before executing. If a button triggers one of these without providing immediate visual feedback (like disabling the button or showing a loading state), users might double-click it thinking the app is unresponsive, which leads to a bad UX. We must avoid adding artificial delays (like `setTimeout`) to show a state change as this makes the app feel sluggish.
+**Action:** When working with native Telegram API calls in click handlers, immediately update the button state (e.g., `disabled = true`, changing text) *before* making the API call to provide instant feedback to the user.
