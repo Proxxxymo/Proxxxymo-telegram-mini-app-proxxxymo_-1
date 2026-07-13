@@ -1,0 +1,3 @@
+## 2024-06-25 - Bridge API Interaction Feedback
+**Learning:** External or bridge APIs (like Telegram.WebApp.close()) can have slight latency. When users click a button triggering these APIs, the lack of immediate visual feedback often leads to confusion and double-taps, degrading the UX.
+**Action:** Always provide instantaneous visual feedback (like setting a button to disabled state and changing its text) immediately upon click, before calling the bridge API, to confirm the action was registered. Do not add artificial delays, as actions should execute instantaneously.
