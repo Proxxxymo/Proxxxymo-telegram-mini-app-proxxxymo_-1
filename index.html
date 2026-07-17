@@ -8,11 +8,14 @@
 </head>
 <body>
     <h1>Добро пожаловать в мое мини-приложение!</h1>
-    <button id="closeBtn">Закрыть</button>
+    <button id="closeBtn" aria-label="Закрыть приложение">Закрыть</button>
 
     <script>
         Telegram.WebApp.ready();
         document.getElementById('closeBtn').addEventListener('click', function() {
+            if (Telegram.WebApp.HapticFeedback) {
+                Telegram.WebApp.HapticFeedback.impactOccurred('medium');
+            }
             Telegram.WebApp.close();
         });
     </script>
