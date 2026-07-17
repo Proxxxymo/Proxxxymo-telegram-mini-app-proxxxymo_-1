@@ -1,0 +1,3 @@
+## 2024-05-24 - Semantic Landmarks in Minimal Telegram Web Apps
+**Learning:** Even in ultra-minimal Telegram Mini Apps (like a single `index.html` file without custom CSS), semantic HTML5 landmarks (e.g., `<main>`) and explicit ARIA labels are critical for screen reader users to navigate the layout and understand interactive elements contextually.
+**Action:** Always verify that core content is wrapped in appropriate semantic tags (`<main>`, `<header>`, `<footer>`) and that buttons have explicit `aria-label` attributes if their visual context isn't sufficient for screen readers.
