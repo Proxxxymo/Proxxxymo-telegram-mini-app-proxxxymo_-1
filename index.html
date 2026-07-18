@@ -8,12 +8,21 @@
 </head>
 <body>
     <h1>Добро пожаловать в мое мини-приложение!</h1>
-    <button id="closeBtn">Закрыть</button>
+    <button id="closeBtn" aria-keyshortcuts="Escape" title="Закрыть (Esc)">Закрыть</button>
 
     <script>
         Telegram.WebApp.ready();
-        document.getElementById('closeBtn').addEventListener('click', function() {
+
+        function closeApp() {
             Telegram.WebApp.close();
+        }
+
+        document.getElementById('closeBtn').addEventListener('click', closeApp);
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeApp();
+            }
         });
     </script>
 </body>
