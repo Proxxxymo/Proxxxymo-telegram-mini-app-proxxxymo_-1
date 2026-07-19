@@ -1,0 +1,3 @@
+## 2024-03-24 - Avoid Artificial Delays on App Closure
+**Learning:** Adding artificial delays (e.g., `setTimeout`) to UI actions (such as closing an app) just to display a state change is a UX anti-pattern; such actions should provide immediate feedback and execute instantaneously to prevent the application from feeling sluggish.
+**Action:** Remove delays and use immediate haptic/visual feedback (like Telegram's impactOccurred) right before calling termination APIs like `Telegram.WebApp.close()`.
