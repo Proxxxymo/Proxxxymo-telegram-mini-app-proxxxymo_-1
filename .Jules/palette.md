@@ -1,0 +1,3 @@
+## 2026-08-03 - Native System Dark Mode Support
+**Learning:** In vanilla Telegram Web Apps where custom CSS is avoided, we can achieve instant, native support for the system's dark/light color scheme by simply adding `<meta name="color-scheme" content="light dark">` to the HTML `<head>`. This allows the browser to automatically adapt default HTML elements (like backgrounds, text, and inputs) to match the user's OS or app preferences.
+**Action:** Always check if a simple `color-scheme` meta tag can resolve basic theming requirements before considering custom CSS variables or complex JavaScript theme logic in pure HTML/JS applications.
